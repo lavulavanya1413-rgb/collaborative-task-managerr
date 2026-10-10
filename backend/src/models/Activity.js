@@ -1,0 +1,2 @@
+import mongoose from 'mongoose';
+const schema=new mongoose.Schema({entityType:{type:String,required:true,index:true},entityId:{type:mongoose.Schema.Types.ObjectId,required:true,index:true},task:{type:mongoose.Schema.Types.ObjectId,ref:'Task'},actor:{type:mongoose.Schema.Types.ObjectId,ref:'User'},action:{type:String,required:true},details:{type:String,default:''},metadata:{type:mongoose.Schema.Types.Mixed,default:{}}},{timestamps:true}); schema.index({entityType:1,entityId:1,createdAt:-1}); export default mongoose.model('Activity',schema);

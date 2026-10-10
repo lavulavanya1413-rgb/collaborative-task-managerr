@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+test('MVP permissions: only managers may delete tasks',()=>{const mayDelete=role=>role==='Manager';assert.equal(mayDelete('Manager'),true);assert.equal(mayDelete('User'),false);assert.equal(mayDelete('Developer'),false);});test('QA-required task cannot finish before sign-off',()=>{const canFinish=(qaRequired,qaSignedOff)=>!qaRequired||qaSignedOff;assert.equal(canFinish(true,false),false);assert.equal(canFinish(true,true),true);assert.equal(canFinish(false,false),true);});

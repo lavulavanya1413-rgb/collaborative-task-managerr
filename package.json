@@ -1,0 +1,16 @@
+{
+    "name":
+"collaborative-task-manager",
+"private":true,
+"scripts":
+{
+    "dev":"concurrently \"npm run server\" \"npm run client\"",
+"server":"npm --prefix backend run dev",
+"client":"npm --prefix frontend run dev",
+"install:all":"npm install && npm --prefix backend install && npm --prefix frontend install"
+},
+"devDependencies":
+{
+    "concurrently":"^9.1.2"
+    }
+}
